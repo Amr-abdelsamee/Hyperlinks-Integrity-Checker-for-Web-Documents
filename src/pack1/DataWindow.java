@@ -11,6 +11,8 @@ import java.awt.Color;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.SystemColor;
+import javax.swing.SwingConstants;
 
 public class DataWindow extends JFrame {
 
@@ -58,61 +60,16 @@ public class DataWindow extends JFrame {
 		}
 
 	public DataWindow() {
+		setTitle("Results");
 		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 796, 658);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JLabel lblNewLabel = new JLabel("Result");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 23));
-		lblNewLabel.setBounds(324, 29, 95, 41);
-		contentPane.add(lblNewLabel);
-
-		JLabel validLinks = new JLabel("New label");
-		validLinks.setForeground(new Color(0, 153, 51));
-		validLinks.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		validLinks.setBounds(46, 94, 165, 22);
-		contentPane.add(validLinks);
-		validLinks.setText("Number of valid links: " + LinkValidator.getValidNum());
-
-		JLabel invalidLinks = new JLabel("New label");
-		invalidLinks.setForeground(new Color(255, 0, 51));
-		invalidLinks.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		invalidLinks.setBounds(294, 94, 165, 22);
-		contentPane.add(invalidLinks);
-		invalidLinks.setText("Number of invalid links: " + LinkValidator.getInvalidNum());
-
-		JLabel allLinks = new JLabel("New label");
-		allLinks.setForeground(new Color(0, 0, 153));
-		allLinks.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		allLinks.setBounds(565, 94, 165, 22);
-		contentPane.add(allLinks);
-		allLinks.setText("Number of all links: " + Main.noOfAllLinks());
-
-		JLabel time = new JLabel("New label");
-		time.setForeground(new Color(0, 0, 0));
-		time.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		time.setBounds(46, 126, 196, 22);
-		contentPane.add(time);
-		time.setText("Execution time: " + Main.time() + " sec");
-
-		JLabel threads = new JLabel("New label");
-		threads.setForeground(new Color(0, 0, 0));
-		threads.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		threads.setBounds(294, 126, 165, 22);
-		contentPane.add(threads);
-		threads.setText("Number of Threads: " + MyThread.getThreadCount());
-		
-		JLabel maxThreads = new JLabel("Number of Threads: 0");
-		maxThreads.setForeground(Color.BLACK);
-		maxThreads.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		maxThreads.setBounds(565, 126, 165, 22);
-		contentPane.add(maxThreads);
-		maxThreads.setText("Max number of Threads: " + MyThread.getMaxThreadCount());
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 163, 762, 220);
@@ -175,6 +132,60 @@ public class DataWindow extends JFrame {
 		inValidTable.getColumnModel().getColumn(1).setPreferredWidth(515);
 		inValidTable.getColumnModel().getColumn(2).setPreferredWidth(123);
 		scrollPane_1.setViewportView(inValidTable);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(SystemColor.activeCaption);
+		panel.setBounds(10, 10, 762, 143);
+		contentPane.add(panel);
+				panel.setLayout(null);
+		
+				JLabel lblNewLabel = new JLabel("Result");
+				lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+				lblNewLabel.setBounds(10, 10, 742, 28);
+				panel.add(lblNewLabel);
+				lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 23));
+				
+						JLabel validLinks = new JLabel("New label");
+						validLinks.setBounds(36, 63, 165, 22);
+						panel.add(validLinks);
+						validLinks.setForeground(new Color(0, 128, 0));
+						validLinks.setFont(new Font("Tahoma", Font.PLAIN, 13));
+						validLinks.setText("Number of valid links: " + LinkValidator.getValidNum());
+						
+								JLabel invalidLinks = new JLabel("New label");
+								invalidLinks.setBounds(285, 63, 165, 22);
+								panel.add(invalidLinks);
+								invalidLinks.setForeground(new Color(139, 0, 0));
+								invalidLinks.setFont(new Font("Tahoma", Font.PLAIN, 13));
+								invalidLinks.setText("Number of invalid links: " + LinkValidator.getInvalidNum());
+								
+										JLabel allLinks = new JLabel("New label");
+										allLinks.setBounds(551, 63, 165, 22);
+										panel.add(allLinks);
+										allLinks.setForeground(new Color(0, 0, 153));
+										allLinks.setFont(new Font("Tahoma", Font.PLAIN, 13));
+										allLinks.setText("Number of all links: " + Main.noOfAllLinks());
+										
+												JLabel threads = new JLabel("New label");
+												threads.setBounds(285, 95, 165, 22);
+												panel.add(threads);
+												threads.setForeground(new Color(0, 0, 0));
+												threads.setFont(new Font("Tahoma", Font.PLAIN, 13));
+												threads.setText("Number of Threads: " + MyThread.getThreadCount());
+												
+														JLabel time = new JLabel("New label");
+														time.setBounds(36, 95, 196, 22);
+														panel.add(time);
+														time.setForeground(new Color(0, 0, 0));
+														time.setFont(new Font("Tahoma", Font.PLAIN, 13));
+														time.setText("Execution time: " + Main.time() + " sec");
+														
+														JLabel maxThreads = new JLabel("Number of Threads: 0");
+														maxThreads.setBounds(551, 95, 165, 22);
+														panel.add(maxThreads);
+														maxThreads.setForeground(Color.BLACK);
+														maxThreads.setFont(new Font("Tahoma", Font.PLAIN, 13));
+														maxThreads.setText("Max number of Threads: " + MyThread.getMaxThreadCount());
 		
 		setLocation(new Point(380, 100));
 	}
