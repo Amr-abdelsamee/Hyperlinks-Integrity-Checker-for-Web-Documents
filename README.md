@@ -7,7 +7,6 @@
   - [Main Window](#Main-Window)
   - [Loading Window](#Loading-Window)
   - [Results Window](#Results-Window)
-- [Author](#Author)
 
 
 ## Over-view
