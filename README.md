@@ -11,10 +11,10 @@
 
 
 ## Over-view
- Hyperlinks Checker program is a program the get inside the HTML document of the provided link and search for the links which in the <"a"> tag and check if this links work or not counting them and provide a report in a separate window after the process end.
+ Hyperlinks Checker program is a program the get inside the HTML document of the provided link and search for the links in the <"a"> tag and check if these links work or not. A report is provided at the end of this process.
  The program uses multi-threads to finish the check faster as some HTML documents contain thousands of links.
- Also, the user can specify how deep this process should go as depth 0 means check links in the HTML of the provided link, depth 1 means check the links in the HTML of the provided link and the links inside these links, this can go so deep and take so long time by increasing the depth.
- The program checks the machine maximum threads, so it varies from one machine to another not a fixed number and the user can choose the number of threads to do the process but within the range of the machine threads.
+ Also, the user can specify how deep this process should go by changing the depth value starting from 0. Depth 1 means check the links in the HTML of the provided link and the links inside these links, this can go so deep and take so long time by increasing the depth.
+ Flexibility exist in the program as The program checks the machine maximum threads that can be used so the user can choose the number of threads to do the process but within the range of the machine threads.
 
 
 ## Program-Screenshots
@@ -35,10 +35,3 @@
 #### depth is 1
 
 <img src="https://github.com/Amr-abdelsamee/Hyperlinks-Integrity-Checker-for-Web-Documents/blob/main/screenshots/results-depth-1.png" alt="results-depth-1"/>
-
-
-## Author
-This project was made by Amr Abdelsamee Youssef
-
-- **Email:** Amr_abdelsamee@yahoo.com
-- **Facebook:**[Amr Abd ELsamee](https://www.facebook.com/Amr.Abdelsame3/)
